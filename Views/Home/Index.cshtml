@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>Random passcode # @Context.Session.GetInt32("Contador")</h1>
+    <form method="post" asp-controller="Home" asp-action="GenerateRamdon">
+        <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Generator PassCoder"
+                value=@ViewBag.Resultado>
+        </div>
+        <button type="submit" class="btn btn-success btn-custom-standard">Generate</button>
+    </form>
+</div>
